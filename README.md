@@ -13,7 +13,7 @@ This site is intended to become the central entry point for:
 - AI MVP case studies
 - service positioning
 - future monetization pages
-- contact / lead generation
+
 
 ## Deployment
 This site is deployed with Cloudflare Pages.
