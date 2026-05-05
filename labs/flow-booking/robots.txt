@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sppfoundry.co/labs/flow-booking/sitemap.xml
