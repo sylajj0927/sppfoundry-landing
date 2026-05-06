@@ -355,7 +355,7 @@
       min-height: calc(88vh - 62px);
       display: grid;
       align-items: center;
-      padding: 86px 0 86px;
+      padding: 86px 0 78px;
     }
 
     .hero-layout {
@@ -443,25 +443,6 @@
       color: var(--muted);
       font-size: 13px;
       line-height: 1.9;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin: 32px 0 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .tag {
-      border: 1px solid rgba(215, 202, 189, 0.86);
-      border-radius: 999px;
-      background: rgba(255, 253, 248, 0.42);
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1;
-      padding: 9px 12px;
     }
 
     .build-list {
@@ -618,6 +599,26 @@
       font-size: 11px;
       line-height: 1;
       padding: 8px 10px;
+    }
+
+    .card-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      width: fit-content;
+      margin-top: 24px;
+      border-bottom: 1px solid rgba(173, 101, 78, 0.58);
+      color: var(--clay);
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.5;
+      transition: border-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+    }
+
+    .lab-feature:hover .card-action {
+      border-color: currentColor;
+      color: var(--ink);
+      transform: translateX(2px);
     }
 
     .how-case {
@@ -941,7 +942,7 @@
 
       .hero {
         padding-top: 38px;
-        padding-bottom: 58px;
+        padding-bottom: 54px;
       }
 
       h1 {
@@ -986,10 +987,6 @@
         max-width: 330px;
         font-size: 13px;
         line-height: 1.65;
-      }
-
-      .tags {
-        display: none;
       }
 
       .actions {
@@ -1089,6 +1086,11 @@
 
       .mini-tags {
         display: none;
+      }
+
+      .card-action {
+        margin-top: 14px;
+        font-size: 14px;
       }
 
       .lab-top {
@@ -1262,12 +1264,6 @@
             <a class="button primary" href="#labs">看 AI 小產品</a>
             <a class="button secondary" href="#how-it-works">了解產品陪跑</a>
           </div>
-          <ul class="tags" aria-label="SPP Foundry 能力標籤">
-            <li class="tag">AI 小產品</li>
-            <li class="tag">自動化流程</li>
-            <li class="tag">LINE Bot</li>
-            <li class="tag">產品企劃</li>
-          </ul>
         </div>
         <aside class="hero-card" aria-label="SPP Foundry 品牌符號">
           <div class="hero-symbol">
@@ -1357,6 +1353,7 @@
             <h3>Flow Booking</h3>
             <p>一人商家極簡預約 MVP。</p>
             <div class="mini-tags"><span>MVP</span><span>Booking</span><span>Small Business</span></div>
+            <span class="card-action">立即體驗 →</span>
           </div>
         </a>
 
