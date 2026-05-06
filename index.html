@@ -4,16 +4,28 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SPP Foundry</title>
-  <meta name="description" content="SPP Foundry — AI × Vibe Coding 陪跑實驗室" />
+  <title>SPP Foundry｜AI × Vibe Coding 產品陪跑實驗室</title>
+  <meta name="description" content="SPP Foundry 是 AI 與自動化產品陪跑實驗室，協助小型商家、創作者與個人品牌，把模糊的點子做成第一個可以體驗、展示與驗證的版本。" />
 
-  <!-- JSON-LD: Organization -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sppfoundry.co/" />
+  <meta property="og:title" content="SPP Foundry｜AI × Vibe Coding 產品陪跑實驗室" />
+  <meta property="og:description" content="把想法，整理成可以開始的版本。體驗 AI 小工具、MVP 與 n8n / LINE Bot 自動化流程。" />
+  <meta property="og:site_name" content="SPP Foundry" />
+  <meta property="og:locale" content="zh_TW" />
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "SPP Foundry",
-    "url": "https://sppfoundry.co",
+    "url": "https://sppfoundry.co/",
+    "description": "AI 與自動化產品陪跑實驗室，協助小型商家、創作者與個人品牌打造可以體驗、展示與驗證的第一版產品。",
+    "email": "hello@sppfoundry.co",
+    "sameAs": [
+      "https://www.threads.net/@spp_chang",
+      "https://www.facebook.com/sylajj"
+    ],
     "contactPoint": {
       "@type": "ContactPoint",
       "email": "hello@sppfoundry.co",
@@ -25,177 +37,1468 @@
   <style>
     :root {
       color-scheme: light;
+      --cream: #fcfbf8;
+      --paper: #ffffff;
+      --petal: #f7ece7;
+      --blush: #efe0da;
+      --sage: #eef3eb;
+      --sage-dark: #6b7767;
+      --clay: #a9634f;
+      --cocoa: #75675f;
+      --ink: #24211d;
+      --muted: #786f68;
+      --soft: #a99f97;
+      --line: #ebe7e1;
+      --line-strong: #ddd5cc;
+      --shadow: 0 18px 46px rgba(70, 55, 42, 0.055);
+      --max: 1088px;
     }
 
-    body {
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      margin: 0;
-      color: #111;
-      background: #fff;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    main {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 56px 24px 40px;
-      width: 100%;
+    * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 92% 10%, rgba(238, 243, 235, 0.62), transparent 25rem),
+        radial-gradient(circle at 8% 2%, rgba(247, 236, 231, 0.5), transparent 22rem),
+        linear-gradient(180deg, #ffffff 0%, var(--cream) 62%, #ffffff 100%);
+      font-family: "Avenir Next", "PingFang TC", "Noto Sans TC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.9;
+      text-rendering: optimizeLegibility;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(123, 103, 93, 0.024) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(123, 103, 93, 0.018) 1px, transparent 1px);
+      background-size: 88px 88px;
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.22), transparent 58%);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    svg {
+      display: block;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(229, 221, 210, 0.72);
+      background: rgba(255, 255, 255, 0.84);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      width: min(100%, var(--max));
+      margin: 0 auto;
+      padding: 16px 26px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink);
+      text-decoration: none;
+      font-family: "Avenir Next", "PingFang TC", "Noto Sans TC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 19px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      line-height: 1;
+    }
+
+    .brand-mark {
+      width: 28px;
+      height: 28px;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      background: rgba(255, 253, 248, 0.76);
+      display: grid;
+      place-items: center;
+      color: var(--clay);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 15px;
+      font-style: italic;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+    }
+
+    .nav-links a {
+      position: relative;
+      text-decoration: none;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -7px;
+      height: 1px;
+      background: var(--clay);
+      opacity: 0;
+      transform: scaleX(0.3);
+      transition: opacity 0.18s ease, transform 0.18s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--ink);
+    }
+
+    .nav-links a:hover::after {
+      opacity: 0.75;
+      transform: scaleX(1);
+    }
+
+    main {
+      width: min(100%, var(--max));
+      margin: 0 auto;
+      padding: 0 26px;
+    }
+
+    section {
+      position: relative;
+      padding: 96px 0;
+      scroll-margin-top: 92px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Avenir Next", "PingFang TC", "Noto Sans TC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 1.22;
+    }
+
     h1 {
-      margin: 0 0 12px;
-      font-size: 40px;
-      letter-spacing: -0.02em;
-      font-weight: 700;
+      max-width: 620px;
+      font-size: clamp(39px, 5.4vw, 64px);
+      line-height: 1.24;
+    }
+
+    .title-line {
+      display: block;
+    }
+
+    h2 {
+      max-width: 640px;
+      font-size: clamp(28px, 3.5vw, 42px);
+      line-height: 1.34;
+    }
+
+    h3 {
+      font-size: 21px;
     }
 
     p {
-      margin: 0 0 16px;
-      line-height: 1.6;
-      color: #374151;
-      /* gray-700 */
+      margin: 0;
+      color: var(--muted);
     }
 
-    .muted {
-      color: #6b7280;
-      /* gray-500 */
-      font-size: 18px;
-      margin-bottom: 32px;
-    }
-
-    /* 分區標題 */
-    h2 {
-      font-size: 12px;
+    .micro,
+    .eyebrow,
+    .kicker {
+      margin: 0 0 18px;
+      color: var(--clay);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      line-height: 1.45;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #9ca3af;
-      /* gray-400 */
-      margin: 40px 0 16px;
-      font-weight: 600;
     }
 
-    /* 連結列表樣式 */
-    .links {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
+    .kicker {
+      color: var(--sage-dark);
     }
 
-    .link-item {
+    .serif-note {
+      color: var(--cocoa);
+      font-family: Georgia, "Times New Roman", "Noto Serif TC", serif;
+      font-style: italic;
+      letter-spacing: 0.01em;
+    }
+
+    .button {
       display: inline-flex;
+      min-height: 44px;
       align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(36, 32, 27, 0.72);
+      border-radius: 999px;
+      padding: 10px 18px;
+      color: var(--ink);
       text-decoration: none;
-      font-size: 16px;
-      color: #111;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-      padding-bottom: 2px;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.2;
+      transition: transform 0.18s ease, background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button.primary {
+      border-color: var(--ink);
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .button.secondary {
+      background: rgba(255, 253, 248, 0.44);
+    }
+
+    .button.text {
+      min-height: auto;
+      border-color: transparent;
+      border-radius: 0;
+      padding: 0 0 4px;
+      border-bottom: 1px solid rgba(173, 101, 78, 0.48);
+      color: var(--clay);
+      background: transparent;
+    }
+
+    .support-link {
+      flex-basis: 100%;
       width: fit-content;
-      transition: all 0.2s ease;
+      margin-top: 8px;
     }
 
-    .link-item:hover {
-      border-bottom-color: #000;
-      color: #000;
+    .button.disabled {
+      border-color: var(--line);
+      color: var(--soft);
+      background: rgba(255, 253, 248, 0.45);
+      cursor: default;
     }
 
-    /* Footer 設計 (仿 Tailwind 樣式) */
-    footer {
+    .button.disabled:hover {
+      transform: none;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 13px;
+      margin-top: 34px;
+    }
+
+    .icon {
+      width: 42px;
+      height: 42px;
+      color: var(--clay);
+    }
+
+    .icon svg {
+      width: 100%;
+      height: 100%;
+      stroke: currentColor;
+      stroke-width: 1.35;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+
+    .section-intro {
+      display: grid;
+      grid-template-columns: minmax(0, 0.74fr) minmax(260px, 0.42fr);
+      gap: 56px;
+      align-items: end;
+      margin-bottom: 38px;
+    }
+
+    .section-intro p:not(.kicker) {
+      font-size: 17px;
+      line-height: 1.95;
+    }
+
+    .section-rule {
+      width: 100%;
+      height: 1px;
+      margin-bottom: 30px;
+      background: linear-gradient(90deg, transparent, var(--line-strong), transparent);
+    }
+
+    .hero {
+      min-height: calc(88vh - 62px);
+      display: grid;
+      align-items: center;
+      padding: 86px 0 86px;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.68fr) minmax(280px, 0.32fr);
+      gap: 72px;
+      align-items: center;
+    }
+
+    .hero-copy {
+      margin-top: 30px;
+      max-width: 560px;
+      color: var(--cocoa);
+      font-size: clamp(17px, 1.55vw, 19px);
+      line-height: 1.85;
+    }
+
+    .hero-note {
+      margin-top: 12px;
+      max-width: 520px;
+      color: var(--soft);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .hero-card {
+      position: relative;
+      min-height: 360px;
+      border: 1px solid rgba(216, 203, 191, 0.68);
+      border-radius: 34px;
+      background:
+        linear-gradient(155deg, rgba(255, 253, 248, 0.86), rgba(242, 223, 214, 0.36)),
+        var(--paper);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      padding: 32px;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 176px;
+      height: 176px;
+      right: -60px;
+      top: -54px;
+      border-radius: 999px;
+      background: rgba(220, 228, 216, 0.86);
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      width: 76px;
+      height: 76px;
+      left: 36px;
+      bottom: 42px;
+      border: 1px solid rgba(173, 101, 78, 0.34);
+      border-radius: 28px;
+      transform: rotate(-10deg);
+    }
+
+    .hero-symbol {
+      position: relative;
+      z-index: 1;
+      min-height: 100%;
+      display: grid;
+      align-content: space-between;
+      gap: 86px;
+    }
+
+    .hero-symbol svg {
+      width: 100%;
+      max-width: 210px;
+      margin-left: auto;
+      color: var(--cocoa);
+      stroke: currentColor;
+      stroke-width: 1.1;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+
+    .hero-symbol-text {
+      max-width: 220px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin: 32px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tag {
+      border: 1px solid rgba(215, 202, 189, 0.86);
+      border-radius: 999px;
+      background: rgba(255, 253, 248, 0.42);
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1;
+      padding: 9px 12px;
+    }
+
+    .build-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid var(--line-strong);
+    }
+
+    .build-item {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 26px;
+      min-height: 132px;
+      border-bottom: 1px solid var(--line);
+      padding: 28px 34px 28px 0;
+    }
+
+    .build-item:nth-child(odd) {
+      border-right: 1px solid var(--line);
+    }
+
+    .build-item:nth-child(even) {
+      padding-left: 34px;
+    }
+
+    .build-item h3 {
+      margin-bottom: 14px;
+    }
+
+    .build-item p {
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .build-item .icon,
+    .lab-feature .icon,
+    .lab-link .icon {
+      padding: 9px;
+      border: 1px solid rgba(173, 101, 78, 0.18);
+      border-radius: 999px;
+      background: rgba(255, 253, 248, 0.48);
+    }
+
+    .labs-board {
+      display: grid;
+      grid-template-columns: minmax(0, 1.04fr) minmax(320px, 0.96fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .lab-feature {
+      position: relative;
+      display: grid;
+      align-content: space-between;
+      min-height: 382px;
+      border: 1px solid rgba(216, 203, 191, 0.78);
+      border-radius: 34px;
+      background:
+        linear-gradient(140deg, rgba(255, 253, 248, 0.88), rgba(220, 228, 216, 0.38)),
+        var(--paper);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      padding: 34px;
+      text-decoration: none;
+    }
+
+    .lab-feature::after {
+      content: "";
+      position: absolute;
+      width: 196px;
+      height: 196px;
+      right: -76px;
+      bottom: -76px;
+      border-radius: 999px;
+      background: rgba(234, 210, 201, 0.62);
+    }
+
+    .lab-feature h3 {
+      max-width: 420px;
       margin-top: auto;
-      border-top: 1px solid #f3f4f6;
-      /* border-gray-100 */
-      padding: 32px 24px;
-      background-color: rgba(255, 255, 255, 0.5);
-      /* bg-white/50 */
-      backdrop-filter: blur(4px);
-      /* backdrop-blur-sm */
-      -webkit-backdrop-filter: blur(4px);
+      font-size: clamp(31px, 3.8vw, 46px);
     }
 
-    .footer-inner {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 24px;
+    .lab-feature p {
+      position: relative;
+      z-index: 1;
+      max-width: 520px;
+      margin-top: 18px;
+      color: var(--cocoa);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    .lab-top {
+      position: relative;
+      z-index: 1;
       display: flex;
       justify-content: space-between;
+      gap: 20px;
+    }
+
+    .lab-stack {
+      display: grid;
+      gap: 16px;
+    }
+
+    .lab-link {
+      display: grid;
+      grid-template-columns: 54px 1fr auto;
+      gap: 20px;
       align-items: center;
+      min-height: 112px;
+      border: 1px solid rgba(232, 223, 213, 0.95);
+      border-radius: 24px;
+      background: rgba(255, 253, 248, 0.52);
+      padding: 22px;
+      text-decoration: none;
+      transition: transform 0.18s ease, border-color 0.18s ease, background-color 0.18s ease;
+    }
+
+    .lab-link:hover,
+    .lab-feature:hover {
+      transform: translateY(-2px);
+      border-color: rgba(173, 101, 78, 0.44);
+    }
+
+    .lab-link h3 {
+      margin-bottom: 6px;
+      font-size: 20px;
+    }
+
+    .lab-link p {
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .arrow {
+      color: var(--clay);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 22px;
+    }
+
+    .mini-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 24px;
+    }
+
+    .mini-tags span {
+      border-radius: 999px;
+      background: rgba(234, 215, 207, 0.5);
+      color: #7f4f40;
+      font-size: 11px;
+      line-height: 1;
+      padding: 8px 10px;
+    }
+
+    .how-case {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.62fr);
+      gap: 48px;
+      align-items: center;
+      border-top: 1px solid var(--line-strong);
+      border-bottom: 1px solid var(--line-strong);
+      padding: 42px 0;
+    }
+
+    .how-copy p {
+      margin-top: 20px;
+      color: var(--cocoa);
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    .case-notes {
+      border-radius: 34px;
+      background: rgba(255, 253, 248, 0.5);
+      border: 1px solid rgba(232, 223, 213, 0.92);
+      padding: 34px;
+    }
+
+    .case-note {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 18px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .case-note:first-child {
+      padding-top: 0;
+    }
+
+    .case-note:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .case-note strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--ink);
+      font-size: 16px;
+    }
+
+    .case-note span {
+      color: var(--muted);
       font-size: 14px;
     }
 
-    .footer-left {
-      color: #6b7280;
-      /* text-gray-500 */
-      font-weight: 500;
+    .note-number {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: rgba(224, 231, 220, 0.86);
+      color: var(--sage-dark);
+      font-family: Georgia, "Times New Roman", serif;
+      font-style: italic;
     }
 
-    .footer-right a {
-      color: #6b7280;
-      /* text-gray-500 */
+    .automation-wrap {
+      border-radius: 30px;
+      background:
+        linear-gradient(135deg, rgba(224, 231, 220, 0.46), rgba(255, 253, 248, 0.62)),
+        var(--paper);
+      border: 1px solid rgba(232, 223, 213, 0.86);
+      padding: 32px;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      align-items: start;
+    }
+
+    .flow-step {
+      position: relative;
+      min-height: 112px;
+      padding: 4px 4px 0;
+    }
+
+    .flow-step:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 26px;
+      right: -14px;
+      width: 34px;
+      height: 1px;
+      background: var(--line-strong);
+    }
+
+    .flow-step .icon {
+      width: 56px;
+      height: 56px;
+      margin-bottom: 18px;
+      padding: 12px;
+      border: 1px solid rgba(173, 101, 78, 0.18);
+      border-radius: 999px;
+      background: rgba(255, 253, 248, 0.66);
+    }
+
+    .flow-step strong {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    .flow-step span {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .services-list {
+      display: grid;
+      gap: 0;
+      border-top: 1px solid var(--line-strong);
+    }
+
+    .service-row {
+      position: relative;
+      display: grid;
+      grid-template-columns: 0.28fr 0.72fr;
+      gap: 56px;
+      align-items: start;
+      border-bottom: 1px solid var(--line);
+      padding: 28px 0;
+    }
+
+    .service-row::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: -1px;
+      width: 52px;
+      height: 1px;
+      background: rgba(173, 101, 78, 0.42);
+    }
+
+    .service-row h3 {
+      font-size: 23px;
+    }
+
+    .service-row p {
+      max-width: 680px;
+      color: var(--cocoa);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    .quote-block,
+    .contact-card {
+      position: relative;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 28px 0 28px 34px;
+      border-left: 1px solid rgba(173, 101, 78, 0.34);
+    }
+
+    .quote-block p,
+    .contact-card p {
+      color: var(--ink);
+      font-family: "Avenir Next", "PingFang TC", "Noto Sans TC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: clamp(19px, 2.1vw, 25px);
+      line-height: 1.8;
+      font-weight: 400;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      margin-top: 20px;
+      padding: 34px 26px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      width: min(100%, var(--max));
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .footer-inner a {
+      color: var(--muted);
       text-decoration: none;
-      transition: color 0.2s;
     }
 
-    .footer-right a:hover {
-      color: #111;
-      /* hover:text-gray-900 */
+    .footer-inner a:hover {
+      color: var(--ink);
     }
 
-    /* 手機版 RWD 設定 */
+    @media (max-width: 920px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .nav-links {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 2px;
+        white-space: nowrap;
+      }
+
+      section {
+        padding: 86px 0;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 70px;
+      }
+
+      .hero-layout,
+      .section-intro,
+      .labs-board,
+        .how-case,
+      .flow,
+      .service-row {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        min-height: 320px;
+      }
+
+      .build-list {
+        grid-template-columns: 1fr;
+      }
+
+      .build-item,
+      .build-item:nth-child(even) {
+        border-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .flow-step {
+        min-height: auto;
+        display: grid;
+        grid-template-columns: 70px 1fr;
+        gap: 18px;
+        padding: 0;
+      }
+
+      .flow-step:not(:last-child)::after {
+        top: auto;
+        left: 31px;
+        bottom: -14px;
+        width: 1px;
+        height: 28px;
+      }
+
+      .flow-step .icon {
+        margin-bottom: 0;
+      }
+
+      .service-row::before {
+        width: 42px;
+      }
+    }
+
     @media (max-width: 640px) {
+      .nav,
+      main,
+      footer {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
 
-      /* md breakpoint */
-      main {
-        padding-top: 60px;
+      .nav {
+        align-items: center;
+        flex-direction: row;
+        gap: 16px;
+        padding-top: 14px;
+        padding-bottom: 14px;
+      }
+
+      .brand {
+        gap: 8px;
+        font-size: 17px;
+      }
+
+      .brand-mark {
+        width: 25px;
+        height: 25px;
+        font-size: 13px;
+      }
+
+      .nav-links {
+        width: auto;
+        gap: 14px;
+        overflow: visible;
+        padding-bottom: 0;
+        font-size: 13px;
+      }
+
+      .nav-links a:nth-child(3),
+      .nav-links a:nth-child(4) {
+        display: none;
+      }
+
+      section {
+        padding: 52px 0;
+        scroll-margin-top: 70px;
+      }
+
+      .hero {
+        padding-top: 38px;
+        padding-bottom: 58px;
       }
 
       h1 {
-        font-size: 32px;
+        max-width: 360px;
+        font-size: clamp(33px, 10vw, 38px);
+        line-height: 1.3;
+      }
+
+      h2 {
+        font-size: clamp(27px, 8.2vw, 34px);
+        line-height: 1.34;
+      }
+
+      h3 {
+        font-size: 19px;
+      }
+
+      .eyebrow,
+      .kicker {
+        margin-bottom: 12px;
+        font-size: 11px;
+        letter-spacing: 0.07em;
+      }
+
+      .hero-layout {
+        gap: 0;
+      }
+
+      .hero-card {
+        display: none;
+      }
+
+      .hero-copy {
+        margin-top: 20px;
+        max-width: 330px;
+        font-size: 16px;
+        line-height: 1.75;
+      }
+
+      .hero-note {
+        margin-top: 8px;
+        max-width: 330px;
+        font-size: 13px;
+        line-height: 1.65;
+      }
+
+      .tags {
+        display: none;
+      }
+
+      .actions {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 28px;
+      }
+
+      .button {
+        width: auto;
+        min-height: 40px;
+        padding: 9px 15px;
+        font-size: 14px;
+      }
+
+      .button.text {
+        width: auto;
+        align-self: flex-start;
+      }
+
+      .section-intro {
+        gap: 12px;
+        margin-bottom: 24px;
+      }
+
+      .section-intro p:not(.kicker) {
+        font-size: 14px;
+        line-height: 1.7;
+      }
+
+      .hero-card,
+      .lab-feature,
+      .automation-wrap,
+      .case-notes {
+        border-radius: 22px;
+        padding: 20px;
+      }
+
+      .icon {
+        width: 34px;
+        height: 34px;
+      }
+
+      .build-item .icon,
+      .lab-feature .icon,
+      .lab-link .icon,
+      .flow-step .icon {
+        padding: 7px;
+      }
+
+      .build-list {
+        border-top-color: var(--line);
+      }
+
+      .build-item {
+        grid-template-columns: 38px 1fr;
+        gap: 14px;
+        min-height: 0;
+        padding: 18px 0;
+      }
+
+      .build-item h3 {
+        margin-bottom: 4px;
+      }
+
+      .build-item p {
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      .labs-board {
+        gap: 12px;
+      }
+
+      .lab-feature {
+        min-height: 188px;
+        align-content: space-between;
+      }
+
+      .lab-feature::after {
+        width: 120px;
+        height: 120px;
+        right: -48px;
+        bottom: -48px;
+      }
+
+      .lab-feature h3 {
+        font-size: 28px;
+      }
+
+      .lab-feature p {
+        margin-top: 8px;
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      .mini-tags {
+        display: none;
+      }
+
+      .lab-top {
+        align-items: center;
+      }
+
+      .serif-note {
+        font-size: 13px;
+      }
+
+      .lab-link {
+        grid-template-columns: 38px 1fr auto;
+        gap: 12px;
+        min-height: 82px;
+        border-radius: 18px;
+        padding: 14px;
+      }
+
+      .lab-link h3 {
+        margin-bottom: 2px;
+        font-size: 17px;
+      }
+
+      .lab-link p {
+        font-size: 12px;
+        line-height: 1.45;
+      }
+
+      .lab-link .arrow {
+        display: block;
+        font-size: 18px;
+      }
+
+      .how-case {
+        gap: 22px;
+        padding: 28px 0;
+      }
+
+      .how-copy p {
+        margin-top: 10px;
+        font-size: 14px;
+        line-height: 1.7;
+      }
+
+      .case-notes {
+        padding: 16px;
+      }
+
+      .case-note {
+        grid-template-columns: 28px 1fr;
+        gap: 12px;
+        padding: 12px 0;
+      }
+
+      .note-number {
+        width: 26px;
+        height: 26px;
+        font-size: 13px;
+      }
+
+      .case-note strong {
+        font-size: 14px;
+      }
+
+      .case-note span {
+        font-size: 12px;
+      }
+
+      .automation-wrap {
+        padding: 16px;
+      }
+
+      .flow {
+        gap: 12px;
+      }
+
+      .flow-step {
+        grid-template-columns: 38px 1fr;
+        gap: 12px;
+      }
+
+      .flow-step .icon {
+        width: 38px;
+        height: 38px;
+      }
+
+      .flow-step:not(:last-child)::after {
+        left: 18px;
+        bottom: -10px;
+        height: 20px;
+      }
+
+      .flow-step strong {
+        margin-bottom: 2px;
+        font-size: 14px;
+      }
+
+      .flow-step span {
+        font-size: 12px;
+        line-height: 1.45;
+      }
+
+      .service-row {
+        gap: 6px;
+        padding: 18px 0;
+      }
+
+      .service-row h3 {
+        font-size: 18px;
+      }
+
+      .service-row p {
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      .service-row::before {
+        width: 34px;
+      }
+
+      .quote-block,
+      .contact-card {
+        padding: 18px 0 18px 18px;
+      }
+
+      .quote-block p,
+      .contact-card p {
+        font-size: 16px;
+        line-height: 1.65;
+      }
+
+      #about {
+        padding-top: 38px;
+        padding-bottom: 38px;
+      }
+
+      #contact {
+        padding-top: 44px;
       }
 
       .footer-inner {
         flex-direction: column;
-        /* flex-col */
-        gap: 16px;
-        /* gap-4 */
-        text-align: center;
       }
     }
   </style>
 </head>
 
 <body>
+  <header class="site-header">
+    <nav class="nav" aria-label="主要導覽">
+      <a class="brand" href="#hero"><span class="brand-mark">S</span><span>SPP Foundry</span></a>
+      <div class="nav-links">
+        <a href="#labs">作品</a>
+        <a href="#how-it-works">陪跑</a>
+        <a href="#services">合作</a>
+        <a href="#about">關於</a>
+        <a href="#contact">聯絡</a>
+      </div>
+    </nav>
+  </header>
+
   <main>
-    <h1>SPP Foundry</h1>
-    <p class="muted">AI × Vibe Coding 產品陪跑實驗室</p>
-    <p>從產品發想到落地，陪你做出第一個可用版本。</p>
+    <section class="hero" id="hero">
+      <div class="hero-layout">
+        <div>
+          <p class="eyebrow">AI × Vibe Coding 產品陪跑實驗室</p>
+          <h1><span class="title-line">把想法，</span><span class="title-line">整理成可以開始的版本。</span></h1>
+          <p class="hero-copy">從產品發想到落地，陪你做出第一個可用版本。</p>
+          <p class="hero-note">Flow Booking、AICert、BOOM、BiteMap，都是從真實需求整理出來的小產品。</p>
+          <div class="actions" aria-label="首頁主要行動">
+            <a class="button primary" href="#labs">看 AI 小產品</a>
+            <a class="button secondary" href="#how-it-works">了解產品陪跑</a>
+          </div>
+          <ul class="tags" aria-label="SPP Foundry 能力標籤">
+            <li class="tag">AI 小產品</li>
+            <li class="tag">自動化流程</li>
+            <li class="tag">LINE Bot</li>
+            <li class="tag">產品企劃</li>
+          </ul>
+        </div>
+        <aside class="hero-card" aria-label="SPP Foundry 品牌符號">
+          <div class="hero-symbol">
+            <svg viewBox="0 0 240 220" aria-hidden="true">
+              <path d="M49 54h54a10 10 0 0 1 10 10v28a10 10 0 0 1-10 10H49a10 10 0 0 1-10-10V64a10 10 0 0 1 10-10Z" />
+              <path d="M73 41c0 9 6 15 15 15-9 0-15 6-15 15 0-9-6-15-15-15 9 0 15-6 15-15Z" />
+              <path d="M133 78h27M152 68l10 10-10 10" />
+              <path d="M178 47h20a9 9 0 0 1 9 9v45a9 9 0 0 1-9 9h-36a9 9 0 0 1-9-9V72l25-25Z" />
+              <path d="M153 72h20a5 5 0 0 0 5-5V47M166 86h28M166 99h18" />
+              <path d="M70 128v28a12 12 0 0 0 12 12h68" />
+              <path d="M139 156l13 13-13 13" />
+              <path d="M166 139h34a10 10 0 0 1 10 10v28a10 10 0 0 1-10 10h-34a10 10 0 0 1-10-10v-28a10 10 0 0 1 10-10Z" />
+              <path d="M170 153h26M170 166h18" />
+              <circle cx="76" cy="78" r="5" />
+              <circle cx="183" cy="164" r="4" />
+            </svg>
+            <p class="hero-symbol-text">想法 → 流程 → 第一版。SPP Foundry 做的是中間那段整理與落地。</p>
+          </div>
+        </aside>
+      </div>
+    </section>
 
-    <h2>Lab Projects</h2>
-<div class="links">
-  <a href="https://bitemap.sppfoundry.co" target="_blank" rel="noopener" class="link-item">
-    BiteMap Taipei — 黃仁勳美食地圖
-  </a>
-  <a href="https://boom.sppfoundry.co" target="_blank" rel="noopener" class="link-item">
-    BOOM — 2026 新年祝福產生器
-  </a>
-  <a href="/labs/aicert/" class="link-item">AICert</a>
-  <a href="/labs/flow-booking/" class="link-item">Flow Booking</a>
-</div>
+    <section id="what-i-build">
+      <div class="section-intro">
+        <div>
+          <p class="kicker">What I Build</p>
+          <h2>我把模糊的點子，整理成可以被打開的入口。</h2>
+        </div>
+      </div>
+      <div class="build-list">
+        <article class="build-item">
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M12 15h18a6 6 0 0 1 6 6v12H18a6 6 0 0 1-6-6V15Z" /><path d="M31 11c0 5 3 8 8 8-5 0-8 3-8 8 0-5-3-8-8-8 5 0 8-3 8-8Z" /></svg>
+          </span>
+          <div>
+            <h3>AI 小工具 / MVP</h3>
+            <p>把生成器、學習工具或查詢工具做成可體驗版本。</p>
+          </div>
+        </article>
+        <article class="build-item">
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M14 11h20a4 4 0 0 1 4 4v22a4 4 0 0 1-4 4H14a4 4 0 0 1-4-4V15a4 4 0 0 1 4-4Z" /><path d="M10 19h28M17 8v6M31 8v6M17 27l4 4 9-10" /></svg>
+          </span>
+          <div>
+            <h3>一人商家流程工具</h3>
+            <p>整理預約、表單、通知與紀錄流程。</p>
+          </div>
+        </article>
+        <article class="build-item">
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M12 15a5 5 0 1 0 0 10 5 5 0 0 0 0-10ZM36 23a5 5 0 1 0 0 10 5 5 0 0 0 0-10ZM18 20h8a5 5 0 0 1 5 5v3M31 28h-6a5 5 0 0 0-5 5v3" /><path d="M15 39h10" /></svg>
+          </span>
+          <div>
+            <h3>n8n / LINE Bot 自動化</h3>
+            <p>把重複資訊整理成推播、摘要或紀錄。</p>
+          </div>
+        </article>
+        <article class="build-item">
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M13 10h16a6 6 0 0 1 6 6v22H17a4 4 0 0 1-4-4V10Z" /><path d="M17 10v24M24 20h7M24 27h7M36 12l3 3-3 3-3-3 3-3Z" /></svg>
+          </span>
+          <div>
+            <h3>產品企劃與陪跑</h3>
+            <p>把需求、Sitemap 與 MVP 範圍收斂清楚。</p>
+          </div>
+        </article>
+      </div>
+    </section>
 
-    <h2>Connect</h2>
-    <div class="links">
-      <a href="https://www.threads.net/@spp_chang" target="_blank" rel="noopener" class="link-item">Threads</a>
-      <a href="https://www.facebook.com/sylajj" target="_blank" rel="noopener" class="link-item">Facebook</a>
-    </div>
+    <section id="labs">
+      <div class="section-intro">
+        <div>
+          <p class="kicker">Labs</p>
+          <h2>AI 小產品與實驗作品。</h2>
+        </div>
+        <p>從真實需求出發，做成可以直接打開使用的小工具、MVP 與互動作品。</p>
+      </div>
+      <div class="labs-board">
+        <a class="lab-feature" href="/labs/flow-booking/">
+          <div class="lab-top">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M13 12h22a4 4 0 0 1 4 4v21a4 4 0 0 1-4 4H13a4 4 0 0 1-4-4V16a4 4 0 0 1 4-4Z" /><path d="M9 21h30M17 8v7M31 8v7M17 29h14" /></svg>
+            </span>
+            <span class="serif-note">Featured Lab</span>
+          </div>
+          <div>
+            <h3>Flow Booking</h3>
+            <p>一人商家極簡預約 MVP。</p>
+            <div class="mini-tags"><span>MVP</span><span>Booking</span><span>Small Business</span></div>
+          </div>
+        </a>
+
+        <div class="lab-stack">
+          <a class="lab-link" href="/labs/aicert/">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M13 10h18a5 5 0 0 1 5 5v24H18a5 5 0 0 1-5-5V10Z" /><path d="M18 18h12M18 25h12M18 32h7" /></svg>
+            </span>
+            <div>
+              <h3>AICert / AI 魔法詞典</h3>
+              <p>AI 學習與證照練習工具。</p>
+            </div>
+            <span class="arrow">→</span>
+          </a>
+          <a class="lab-link" href="https://boom.sppfoundry.co" target="_blank" rel="noopener" aria-label="開啟 BOOM 外部網站" title="開啟外部網站">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M14 22h20v18H14V22Z" /><path d="M11 17h26v5H11v-5ZM24 17v23M17 17c-4-6 2-10 7 0M31 17c4-6-2-10-7 0" /><path d="M37 9c0 4 3 7 7 7-4 0-7 3-7 7 0-4-3-7-7-7 4 0 7-3 7-7Z" /></svg>
+            </span>
+            <div>
+              <h3>BOOM</h3>
+              <p>2026 新年祝福產生器。</p>
+            </div>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="lab-link" href="https://bitemap.sppfoundry.co" target="_blank" rel="noopener" aria-label="開啟 BiteMap Taipei 外部網站" title="開啟外部網站">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M24 42s13-12 13-24a13 13 0 1 0-26 0c0 12 13 24 13 24Z" /><circle cx="24" cy="18" r="4" /><path d="M13 38c7-4 15-4 22 0" /></svg>
+            </span>
+            <div>
+              <h3>BiteMap Taipei</h3>
+              <p>主題式美食地圖小工具。</p>
+            </div>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works">
+      <div class="section-intro">
+        <div>
+          <p class="kicker">How It Works</p>
+          <h2>我如何陪你把想法做成第一版可用產品。</h2>
+        </div>
+        <p>從模糊需求開始，收斂成可操作流程，再做出能被體驗的 MVP。</p>
+      </div>
+      <div class="how-case">
+        <div class="how-copy">
+          <h3>用 Flow Booking 示範：先把最小流程做出來。</h3>
+          <p>從一人商家的預約需求，整理出客戶預約、時段管理與紀錄同步，先完成第一版可體驗產品。</p>
+          <div class="actions">
+            <a class="button primary" href="/labs/flow-booking/">體驗 Flow Booking</a>
+            <span class="button disabled" aria-disabled="true">閱讀案例 Coming Soon</span>
+            <a class="button text support-link" href="#contact">有自己的想法？先聊聊 →</a>
+          </div>
+        </div>
+        <aside class="case-notes" aria-label="Flow Booking MVP 範圍">
+          <div class="case-note"><span class="note-number">1</span><div><strong>模糊需求</strong><span>先釐清真正要驗證的流程。</span></div></div>
+          <div class="case-note"><span class="note-number">2</span><div><strong>可操作流程</strong><span>整理成使用者能走完的路徑。</span></div></div>
+          <div class="case-note"><span class="note-number">3</span><div><strong>第一版 MVP</strong><span>做出可以展示與回饋的版本。</span></div></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="automation">
+      <div class="section-intro">
+        <div>
+          <p class="kicker">Automation</p>
+          <h2>把重複的資訊流，整理成溫和但可靠的自動化。</h2>
+        </div>
+        <p>適合把每日資訊、提醒與紀錄整理成穩定的工作流程。</p>
+      </div>
+      <div class="automation-wrap">
+        <div class="flow" aria-label="自動化流程示意">
+          <div class="flow-step">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M12 14h24v20H12V14Z" /><path d="M12 21h24M18 28h8" /></svg></span>
+            <div><strong>收集資訊</strong><span>表單、待辦、資料表或知識庫。</span></div>
+          </div>
+          <div class="flow-step">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 10c0 6 4 10 10 10-6 0-10 4-10 10 0-6-4-10-10-10 6 0 10-4 10-10Z" /><path d="M13 37h22M17 31h14" /></svg></span>
+            <div><strong>AI 整理</strong><span>摘要、分類、標籤或草稿。</span></div>
+          </div>
+          <div class="flow-step">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M12 13h24a4 4 0 0 1 4 4v13a4 4 0 0 1-4 4H22l-8 6v-6h-2a4 4 0 0 1-4-4V17a4 4 0 0 1 4-4Z" /><path d="M17 22h14M17 28h9" /></svg></span>
+            <div><strong>LINE / Sheet / 知識庫</strong><span>推播、紀錄或查詢入口。</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="section-intro">
+        <div>
+          <p class="kicker">Services</p>
+          <h2>合作不是先買一套服務，而是先把問題說清楚。</h2>
+        </div>
+        <p>先用一個小範圍合作，把想法整理成可以開始的版本。</p>
+      </div>
+      <div class="services-list">
+        <article class="service-row">
+          <h3>AI MVP 陪跑</h3>
+          <p>從想法整理到第一版 demo。</p>
+        </article>
+        <article class="service-row">
+          <h3>小型工具 / Landing Page 製作</h3>
+          <p>做出可以被體驗的入口與流程。</p>
+        </article>
+        <article class="service-row">
+          <h3>n8n / LINE Bot 自動化</h3>
+          <p>整理推播、紀錄與日常資訊流。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="section-rule"></div>
+      <div class="quote-block">
+        <p>SPP Foundry 是我把 AI、Vibe Coding 與自動化實驗整理成作品、案例與服務的地方。第一版產品不需要很大，先能使用、能理解、能回饋。</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-intro">
+        <div>
+          <p class="kicker">Contact</p>
+          <h2>有一個想法，先聊聊。</h2>
+        </div>
+      </div>
+      <div class="contact-card">
+        <p>不用一開始就準備完整規格。先把問題、對象與使用情境說清楚，再整理成可以開始的版本。</p>
+      </div>
+      <div class="actions">
+        <a class="button primary" href="mailto:hello@sppfoundry.co">和我聊聊</a>
+        <a class="button secondary" href="#labs">查看作品</a>
+      </div>
+    </section>
   </main>
 
   <footer>
     <div class="footer-inner">
-      <div class="footer-left">© SPP Foundry</div>
-      <div class="footer-right">
-        <a href="mailto:hello@sppfoundry.co">hello@sppfoundry.co</a>
-      </div>
+      <span>© SPP Foundry</span>
+      <span><a href="mailto:hello@sppfoundry.co">hello@sppfoundry.co</a></span>
     </div>
   </footer>
 </body>
