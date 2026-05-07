@@ -240,7 +240,9 @@
     }
 
     .kicker {
-      color: var(--sage-dark);
+      color: var(--clay);
+      font-size: 14px;
+      letter-spacing: 0.05em;
     }
 
     .serif-note {
@@ -582,6 +584,7 @@
     .arrow {
       color: var(--clay);
       font-family: Georgia, "Times New Roman", serif;
+      font-variant-emoji: text;
       font-size: 22px;
     }
 
@@ -892,6 +895,11 @@
 
       .service-row::before {
         width: 42px;
+      }
+
+      .lab-feature::after,
+      .hero-card::before {
+        display: none;
       }
     }
 
@@ -1347,7 +1355,6 @@
             <span class="icon" aria-hidden="true">
               <svg viewBox="0 0 48 48"><path d="M13 12h22a4 4 0 0 1 4 4v21a4 4 0 0 1-4 4H13a4 4 0 0 1-4-4V16a4 4 0 0 1 4-4Z" /><path d="M9 21h30M17 8v7M31 8v7M17 29h14" /></svg>
             </span>
-            <span class="serif-note">Featured Lab</span>
           </div>
           <div>
             <h3>Flow Booking</h3>
