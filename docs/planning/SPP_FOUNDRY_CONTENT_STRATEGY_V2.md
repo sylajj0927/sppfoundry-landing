@@ -46,6 +46,13 @@ Labs 頁面原則：
 - Flow Booking、AICert 可視為較完整的 MVP。
 - BOOM、BiteMap、未來 Resize Helper 屬於 AI 小產品 / 實驗作品，不硬說成完整 MVP。
 
+### Labs 卡片視覺層級決策（2026-05-07）
+
+- Flow Booking 為首張大卡，視覺優先性已足夠，不需額外 Featured Lab 標籤。
+- 不使用 Featured Lab 這類英文附加標籤，避免手機版視線干擾，也避免未來產品增加後需要重新排序 featured 的維護問題。
+- 站內連結箭頭使用 `→`，外部連結箭頭使用 `↗`（文字符號，不允許 emoji 渲染）。
+- Labs 卡片這輪只做資訊層級微修，整體視覺重設計暫緩，待 Works 第一批 case study 確立後再評估。
+
 ---
 
 ## 3. Works 的角色
@@ -160,6 +167,7 @@ Works：
 ## 9. 後續待辦
 
 - [x] 首頁 `/` 完成 Phase 1.9 refinement。
+- [x] Labs 卡片資訊層級微修：移除 Featured Lab、箭頭標準化（2026-05-07）。
 - [ ] 建立 Works 入口與第一批 case study。
 - [ ] 建立 Flow Booking case study。
 - [ ] 建立 AICert case study。

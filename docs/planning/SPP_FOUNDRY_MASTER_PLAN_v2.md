@@ -301,14 +301,16 @@ Works：
 
 ## 10. Phase 狀態
 
-### Phase 1.9 目前狀態
+### Phase 1.9 已上線（截至 2026-05-07）
 
-- 首頁 `index.html` 已完成 Phase 1.9 refinement。
-- 已完成純靜態首頁，不導入 framework。
-- 已完成首頁入口頁定位、Hero 兩個 CTA、`#how-it-works`、AI 小產品語言、mobile refinement。
-- 尚未 build。
-- 尚未 deploy。
-- 尚未 commit。
+- 首頁 `index.html` 已完成 Phase 1.9 refinement 並上線。
+- Cloudflare Pages live：`https://sppfoundry.co/`
+- Commits 上線紀錄：
+  - `9ccc9d8` feat: refine spp foundry landing page
+  - `944e21c` fix: clarify labs card actions
+  - `ffdc321` fix: polish homepage labels and labs mobile（2026-05-07 微修）
+- 本輪微修內容：kicker 樣式標準化、Labs 資訊層級清理、外部箭頭標準化、手機 horizontal overflow 修正。
+- Hero 暫時維持原暖色穩定版本。參考圖的紅 / 藍 / 曲線設計語言本輪已試驗並回退，後續考慮在 How It Works 或 `/works/` case study 頁推進。
 
 ### Phase 2
 
