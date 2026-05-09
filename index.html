@@ -338,7 +338,17 @@
       grid-template-columns: minmax(0, 0.74fr) minmax(260px, 0.42fr);
       gap: 56px;
       align-items: end;
-      margin-bottom: 38px;
+      margin-bottom: 56px;
+    }
+
+    .section-intro .kicker::before {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--clay);
+      opacity: 0.55;
+      margin-bottom: 16px;
     }
 
     .section-intro p:not(.kicker) {
@@ -785,7 +795,7 @@
       gap: 56px;
       align-items: start;
       border-bottom: 1px solid var(--line);
-      padding: 28px 0;
+      padding: 32px 0;
     }
 
     .service-row::before {
@@ -795,7 +805,7 @@
       top: -1px;
       width: 52px;
       height: 1px;
-      background: rgba(173, 101, 78, 0.42);
+      background: rgba(173, 101, 78, 0.55);
     }
 
     .service-row h3 {
@@ -1004,6 +1014,11 @@
         margin-bottom: 12px;
         font-size: 11px;
         letter-spacing: 0.07em;
+      }
+
+      .section-intro .kicker::before {
+        width: 28px;
+        margin-bottom: 12px;
       }
 
       .hero-layout {
