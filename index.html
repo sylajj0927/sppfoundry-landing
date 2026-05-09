@@ -41,9 +41,9 @@
       --paper: #ffffff;
       --petal: #f7ece7;
       --blush: #efe0da;
-      --sage: #eef3eb;
-      --sage-dark: #6b7767;
-      --clay: #a9634f;
+      --sage: #eef0f5;
+      --sage-dark: #6b7a9e;
+      --clay: #c07848;
       --cocoa: #75675f;
       --ink: #24211d;
       --muted: #786f68;
@@ -66,7 +66,7 @@
       margin: 0;
       color: var(--ink);
       background:
-        radial-gradient(circle at 92% 10%, rgba(238, 243, 235, 0.62), transparent 25rem),
+        radial-gradient(circle at 92% 10%, rgba(235, 239, 248, 0.55), transparent 25rem),
         radial-gradient(circle at 8% 2%, rgba(247, 236, 231, 0.5), transparent 22rem),
         linear-gradient(180deg, #ffffff 0%, var(--cream) 62%, #ffffff 100%);
       font-family: "Avenir Next", "PingFang TC", "Noto Sans TC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -200,6 +200,8 @@
       font-weight: 500;
       letter-spacing: 0;
       line-height: 1.22;
+      word-break: keep-all;
+      overflow-wrap: break-word;
     }
 
     h1 {
@@ -370,10 +372,10 @@
     }
 
     .hero {
-      min-height: calc(88vh - 62px);
+      min-height: calc(82vh - 62px);
       display: grid;
       align-items: center;
-      padding: 86px 0 78px;
+      padding: 86px 0 52px;
     }
 
     .hero-layout {
@@ -420,7 +422,7 @@
       right: -60px;
       top: -54px;
       border-radius: 999px;
-      background: rgba(220, 228, 216, 0.86);
+      background: rgba(210, 218, 235, 0.82);
     }
 
     .hero-card::after {
@@ -811,11 +813,11 @@
       top: -1px;
       width: 52px;
       height: 1px;
-      background: rgba(173, 101, 78, 0.55);
+      background: rgba(192, 120, 72, 0.55);
     }
 
     .service-row h3 {
-      font-size: 23px;
+      font-size: 20px;
     }
 
     .service-row p {
@@ -991,18 +993,18 @@
       }
 
       section {
-        padding: 52px 0;
+        padding: 44px 0;
         scroll-margin-top: 70px;
       }
 
       .hero {
         padding-top: 38px;
-        padding-bottom: 54px;
+        padding-bottom: 32px;
       }
 
       h1 {
         max-width: 360px;
-        font-size: clamp(28px, 8vw, 34px);
+        font-size: clamp(24px, 7vw, 28px);
         line-height: 1.3;
       }
 
@@ -1037,7 +1039,7 @@
 
       .hero-copy {
         margin-top: 20px;
-        max-width: 330px;
+        max-width: 100%;
         font-size: 16px;
         line-height: 1.75;
       }
