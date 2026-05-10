@@ -60,11 +60,13 @@
 
     html {
       scroll-behavior: smooth;
+      background: #ffffff;
     }
 
     body {
       margin: 0;
       color: var(--ink);
+      min-height: 100vh;
       background:
         radial-gradient(circle at 92% 10%, rgba(235, 239, 248, 0.55), transparent 25rem),
         radial-gradient(circle at 8% 2%, rgba(247, 236, 231, 0.5), transparent 22rem),
@@ -604,10 +606,22 @@
     }
 
     .arrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       color: var(--clay);
       font-family: Georgia, "Times New Roman", serif;
-      font-variant-emoji: text;
       font-size: 22px;
+    }
+
+    .arrow svg {
+      width: 1em;
+      height: 1em;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
     .mini-tags {
@@ -1023,6 +1037,13 @@
       h2 {
         font-size: clamp(27px, 8.2vw, 34px);
         line-height: 1.34;
+      }
+
+      section h2 {
+        max-width: 100%;
+        word-break: normal;
+        overflow-wrap: anywhere;
+        line-break: loose;
       }
 
       h3 {
@@ -1455,7 +1476,12 @@
               <h3>BOOM</h3>
               <p>2026 新年祝福產生器。</p>
             </div>
-            <span class="arrow" aria-hidden="true">↗</span>
+            <span class="arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M7 17L17 7" />
+                <path d="M9 7h8v8" />
+              </svg>
+            </span>
           </a>
           <a class="lab-link" href="https://bitemap.sppfoundry.co" target="_blank" rel="noopener" aria-label="開啟 BiteMap Taipei 外部網站" title="開啟外部網站">
             <span class="icon" aria-hidden="true">
@@ -1465,7 +1491,12 @@
               <h3>BiteMap Taipei</h3>
               <p>主題式美食地圖小工具。</p>
             </div>
-            <span class="arrow" aria-hidden="true">↗</span>
+            <span class="arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M7 17L17 7" />
+                <path d="M9 7h8v8" />
+              </svg>
+            </span>
           </a>
         </div>
       </div>
